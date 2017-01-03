@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+     <meta charset="UTF-8"/>
+      <title>Valentin Desseux</title>
+     </head>
+  <body>
+    #include stdio.h<br>
+
+int main(int argc, char* argv[]) {<br>
+
+int des1, des2, des3, des4, des5, des6;<br>
+
+scanf("%d %d %d %d %d %d", &des1, &des2, &des3, &des4, &des5, &des6);<br>
+
+/*variable joueur  1*/<br>
+int j1s = ((des2 == des1 + 1 && des3 == des2 +1) || (des1 == des2 + 1 && des3 == des1 + 1) || (des3 == des1 + 1 && des2 == des3 + 1) || (des1 == des3 + 1 && des2 == des1 + 1) || (des3 == des2 + 1 && des1 == des3 + 1) || (des2 == des3 + 1 && des1 == des2 + 1));<br>
+int j1f = ((des1 == 1 && des2 == 1 && des3 >= 2) || (des1 == 1 && des3 == 1 && des2 >= 2) || (des2 == 1 && des3 == 1 && des1 >= 2));<br>
+int j1t = (des1 == des2 && des2 == des3);<br>
+int j1421 = ((des1 == 4 && des2 == 2 && des3 == 1) || (des1 == 1 && des2 == 4 && des3 == 2) || (des1 == 2 && des2 == 1 && des3 == 4) || (des1 == 4 && des2 == 1 && des3 == 2) || (des1 == 1 && des2 == 2 && des3 == 4) || (des1 == 2 && des2 == 4 && des3 == 1));<br>
+int j1q = (j1s == 0 && j1f == 0 && j1t == 0 && j1421 == 0);<br>
+
+/*variable joueur 2*/<br>
+int j2s = ((des5 == des4 + 1 && des6 == des5 +1) || (des4 == des5 + 1 && des6 == des4 + 1) || (des6 == des4 + 1 && des5 == des6 + 1) || (des4 == des6 + 1 && des5 == des4 + 1) || (des6 == des5 + 1 && des4 == des6 + 1) || (des5 == des6 + 1 && des4 == des5 + 1));<br>
+int j2f = ((des4 == 1 && des5 == 1 && des6 >= 2) || (des4 == 1 && des6 == 1 && des5 >= 2) || (des5 == 1 && des6 == 1 && des4 >= 2));<br>
+int j2t = (des4 == des5 && des5 == des6);<br>
+int j2421 = ((des4 == 4 && des5 == 2 && des6 == 1) || (des4 == 1 && des5 == 4 && des6 == 2) || (des4 == 2 && des5 == 1 && des6 == 4) || (des4 == 4 && des5 == 1 && des6 == 2) || (des4 == 1 && des5 == 2 && des6 == 4) || (des4 == 2 && des5 == 4 && des6 == 1));<br>
+int j2q = (j2s == 0 && j2f == 0 && j2t == 0 && j2421 == 0);<br>
+
+/*player1 wins*/<br>
+if ((j1421 == 1 && j2s ==1) || (j1421 == 1 && j2f == 1) || (j1421 == 1 && j2t == 1) || (j1421 == 1 && j2q == 1) || (j1t == 1 && j2s == 1) || (j1t == 1 && j2f == 1) || (j1t == 1 && j2q == 1) || (j1f == 1 && j2s == 1) || (j1f == 1 && j2q ==1) || (j1s == 1 && j2q == 1))<br>
+    printf("Player1 wins\n");<br>
+
+else if(((j1s == 1 && des3 > des2 && des3 > des1) && (j2s == 1 && des6 > des5 && des6 > des4) && (des6 < des3)) || ((j1s == 1 && des3 > des2 && des3 > des1) && (j2s == 1 && des5 > des6 && des5 > des4) && (des5 < des3)) || ((j1s == 1 && des3 > des2 && des3 > des1) && (j2s == 1 && des4 > des5 && des4 > des6) && (des4 < des3)) || ((j1s == 1 && des2 > des3 && des2 > des1) && (j2s == 1 && des6 > des5 && des6 > des4) && (des6 < des2)) || ((j1s == 1 && des2 > des3 && des2 > des1) && (j2s == 1 && des5 > des6 && des5 > des4) && (des5 < des2)) || ((j1s == 1 && des2 > des3 && des2 > des1) && (j2s == 1 && des4 > des5 && des4 > des6) && (des4 < des2)) || ((j1s == 1 && des1 > des2 && des1 > des3) && (j2s == 1 && des6 > des5 && des6 > des4) && (des6 < des1)) || ((j1s == 1 && des1 > des2 && des1 > des3) && (j2s == 1 && des5 > des6 && des5 > des4) && (des5 < des1)) || ((j1s == 1 && des1 > des2 && des1 > des3) && (j2s == 1 && des4 > des5 && des4 > des6) && (des4 < des1)))<br>
+     printf("Player1 wins\n");<br>
+
+else if (((j1f == 1 && des3 >= 2) && (j2f == 1 && des6 >= 2) && (des3 > des6)) || ((j1f == 1 && des3 >= 2) && (j2f == 1 && des5 >= 2) && (des3 > des5)) || ((j1f == 1 && des3 >= 2) && (j2f == 1 && des4 >= 2) && (des3 > des4)) || ((j1f == 1 && des2 >= 2) && (j2f == 1 && des6 >= 2) && (des2 > des6)) ||  ((j1f == 1 && des2 >= 2) && (j2f == 1 && des5 >= 2) && (des2 > des5)) ||  ((j1f == 1 && des2 >= 2) && (j2f == 1 && des4 >= 2) && (des2 > des4)) || ((j1f == 1 && des1 >= 2) && (j2f == 1 && des6 >= 2) && (des1 > des6)) || ((j1f == 1 && des1 >= 2) && (j2f == 1 && des5 >= 2) && (des1 > des5)) || ((j1f == 1 && des1 >= 2) && (j2f == 1 && des4 >= 2) && (des1 > des4)))<br>
+    printf("Player1 wins\n");<br>
+
+else if ((j1t == 1 && j2t == 1) && (des1 > des4))<br>
+    printf("Player1 wins\n");<br>
+
+else if ((j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 > des6) || (des3 == des6 && des2 > des5) || (des3 == des6 && des2 == des5 && des1 > des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 > des6) || (des3 == des6 && des2 > des4) || (des3 == des6 && des2 == des4 && des1 > des5)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 > des5) || (des3 == des5 && des2 > des6) || (des3 == des5 && des2 == des6 && des1 > des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 > des5) || (des3 == des5 && des2 > des4) || (des3 == des5 && des2 == des4 && des1 > des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 > des4) || (des3 == des4 && des2 > des5) || (des3 == des4 && des2 == des5 && des1 > des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 > des4) || (des3 == des4 && des2 > des6) || (des3 == des4 && des2 == des6 && des1 > des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 > des6) || (des3 == des6 && des1 > des5) || (des3 == des6 && des1 == des5 && des2 > des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 > des6) || (des3 == des6 && des1 > des4) || (des3 == des6 && des1 == des4 && des2 > des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 > des5) || (des3 == des5 && des1 > des6) || (des3 == des5 && des1 == des6 && des2 > des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 > des5) || (des3 == des5 && des1 > des4) || (des3 == des5 && des1 == des4 && des2 > des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 > des4) || (des3 == des4 && des1 > des5) || (des3 == des4 && des1 == des5 && des2 > des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 > des4) || (des3 == des4 && des1 > des6) || (des3 == des4 && des1 == des6 && des2 > des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 > des6) || (des2 == des6 && des3 > des5) || (des2 == des6 && des3 == des5 && des1 > des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 > des6) || (des2 == des6 && des3 > des4) || (des2 == des6 && des3 == des4 && des1 > des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 > des5) || (des2 == des5 && des3 > des6) || (des2 == des5 && des3 == des6 && des1 > des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 > des5) || (des2 == des5 && des3 > des4) || (des2 == des5 && des3 == des4 && des1 > des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 > des4) || (des2 == des4 && des3 > des5) || (des2 == des4 && des3 == des5 && des1 > des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 > des4) || (des2 == des4 && des3 > des6) || (des2 == des4 && des3 == des6 && des1 > des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 > des6) || (des2 == des6 && des1 > des5) || (des2 == des6 && des1 == des5 && des3 > des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 > des6) || (des2 == des6 && des1 > des4) || (des2 == des6 && des1 == des4 && des3 > des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 > des5) || (des2 == des5 && des1 > des6) || (des2 == des5 && des1 == des6 && des3 > des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 > des5) || (des2 == des5 && des1 > des4) || (des2 == des5 && des1 == des4 && des3 > des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 > des4) || (des2 == des4 && des1 > des5) || (des2 == des4 && des1 == des5 && des3 > des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 > des4) || (des2 == des4 && des1 > des6) || (des2 == des4 && des1 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 > des6) || (des1 == des6 && des3 > des5) || (des1 == des6 && des3 == des5 && des2 > des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 > des6) || (des1 == des6 && des3 > des4) || (des1 == des6 && des3 == des4 && des2 > des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 > des5) || (des1 == des5 && des3 > des6) || (des1 == des5 && des3 == des6 && des2 > des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 > des5) || (des1 == des5 && des3 > des4) || (des1 == des5 && des3 == des4 && des2 > des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 > des4) || (des1 == des4 && des3 > des5) || (des1 == des4 && des3 == des5 && des2 > des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 > des4) || (des1 == des4 && des3 > des6) || (des1 == des4 && des3 == des6 && des2 > des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 > des6) || (des1 == des6 && des2 > des5) || (des1 == des6 && des2 == des5 && des3 > des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 > des6) || (des1 == des6 && des2 > des4) || (des1 == des6 && des2 == des4 && des3 > des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 > des5) || (des1 == des5 && des2 > des6) || (des1 == des5 && des2 == des6 && des3 > des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 > des5) || (des1 == des5 && des2 > des4) || (des1 == des5 && des2 == des4 && des3 > des6)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 > des4) || (des1 == des4 && des2 > des6) || (des1 == des4 && des2 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 > des4) || (des1 == des4 && des2 > des5) || (des1 == des4 && des2 == des5 && des3 > des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 > des6) || (des3 == des6 && des2 > des5) || (des3 == des6 && des2 == des5 && des1 > des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 > des6) || (des3 == des6 && des2 > des4) || (des3 == des6 && des2 == des4 && des1 > des5)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 > des5) || (des3 == des5 && des2 > des6) || (des3 == des5 && des2 == des6 && des1 > des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 > des5) || (des3 == des5 && des2 > des4) || (des3 == des5 && des2 == des4 && des1 > des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 > des4) || (des3 == des4 && des2 > des5) || (des3 == des4 && des2 == des5 && des1 > des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 > des4) || (des3 == des4 && des2 > des6) || (des3 == des4 && des2 == des6 && des1 > des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 > des6) || (des3 == des6 && des1 > des5) || (des3 == des6 && des1 == des5 && des2 > des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 > des6) || (des3 == des6 && des1 > des4) || (des3 == des6 && des1 == des4 && des2 > des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 > des5) || (des3 == des5 && des1 > des6) || (des3 == des5 && des1 == des6 && des2 > des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 > des5) || (des3 == des5 && des1 > des4) || (des3 == des5 && des1 == des4 && des2 > des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 > des4) || (des3 == des4 && des1 > des5) || (des3 == des4 && des1 == des5 && des2 > des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 > des4) || (des3 == des4 && des1 > des6) || (des3 == des4 && des1 == des6 && des2 > des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 > des6) || (des2 == des6 && des3 > des5) || (des2 == des6 && des3 == des5 && des1 > des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 > des6) || (des2 == des6 && des3 > des4) || (des2 == des6 && des3 == des4 && des1 > des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 > des5) || (des2 == des5 && des3 > des6) || (des2 == des5 && des3 == des6 && des1 > des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 > des5) || (des2 == des5 && des3 > des4) || (des2 == des5 && des3 == des4 && des1 > des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 > des4) || (des2 == des4 && des3 > des5) || (des2 == des4 && des3 == des5 && des1 > des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 > des4) || (des2 == des4 && des3 > des6) || (des2 == des4 && des3 == des6 && des1 > des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 > des6) || (des2 == des6 && des1 > des5) || (des2 == des6 && des1 == des5 && des3 > des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 > des6) || (des2 == des6 && des1 > des4) || (des2 == des6 && des1 == des4 && des3 > des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 > des5) || (des2 == des5 && des1 > des6) || (des2 == des5 && des1 == des6 && des3 > des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 > des5) || (des2 == des5 && des1 > des4) || (des2 == des5 && des1 == des4 && des3 > des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 > des4) || (des2 == des4 && des1 > des5) || (des2 == des4 && des1 == des5 && des3 > des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 > des4) || (des2 == des4 && des1 > des6) || (des2 == des4 && des1 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 > des6) || (des1 == des6 && des3 > des5) || (des1 == des6 && des3 == des5 && des2 > des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 > des6) || (des1 == des6 && des3 > des4) || (des1 == des6 && des3 == des4 && des2 > des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 > des5) || (des1 == des5 && des3 > des6) || (des1 == des5 && des3 == des6 && des2 > des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 > des5) || (des1 == des5 && des3 > des4) || (des1 == des5 && des3 == des4 && des2 > des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 > des4) || (des1 == des4 && des3 > des5) || (des1 == des4 && des3 == des5 && des2 > des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 > des4) || (des1 == des4 && des3 > des6) || (des1 == des4 && des3 == des6 && des2 > des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 > des6) || (des1 == des6 && des2 > des5) || (des1 == des6 && des2 == des5 && des3 > des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 > des6) || (des1 == des6 && des2 > des4) || (des1 == des6 && des2 == des4 && des3 > des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 > des5) || (des1 == des5 && des2 > des6) || (des1 == des5 && des2 == des6 && des3 > des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 > des5) || (des1 == des5 && des2 > des4) || (des1 == des5 && des2 == des4 && des3 > des6)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 > des4) || (des1 == des4 && des2 > des6) || (des1 == des4 && des2 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 > des4) || (des1 == des4 && des2 > des5) || (des1 == des4 && des2 == des5 && des3 > des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 > des6) || (des3 == des6 && des2 > des5) || (des3 == des6 && des2 == des5 && des1 > des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 > des6) || (des3 == des6 && des2 > des4) || (des3 == des6 && des2 == des4 && des1 > des5)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 > des5) || (des3 == des5 && des2 > des6) || (des3 == des5 && des2 == des6 && des1 > des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 > des5) || (des3 == des5 && des2 > des4) || (des3 == des5 && des2 == des4 && des1 > des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 > des4) || (des3 == des4 && des2 > des5) || (des3 == des4 && des2 == des5 && des1 > des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 > des4) || (des3 == des4 && des2 > des6) || (des3 == des4 && des2 == des6 && des1 > des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 > des6) || (des3 == des6 && des1 > des5) || (des3 == des6 && des1 == des5 && des2 > des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 > des6) || (des3 == des6 && des1 > des4) || (des3 == des6 && des1 == des4 && des2 > des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 > des5) || (des3 == des5 && des1 > des6) || (des3 == des5 && des1 == des6 && des2 > des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 > des5) || (des3 == des5 && des1 > des4) || (des3 == des5 && des1 == des4 && des2 > des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 > des4) || (des3 == des4 && des1 > des5) || (des3 == des4 && des1 == des5 && des2 > des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 > des4) || (des3 == des4 && des1 > des6) || (des3 == des4 && des1 == des6 && des2 > des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 > des6) || (des2 == des6 && des3 > des5) || (des2 == des6 && des3 == des5 && des1 > des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 > des6) || (des2 == des6 && des3 > des4) || (des2 == des6 && des3 == des4 && des1 > des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 > des5) || (des2 == des5 && des3 > des6) || (des2 == des5 && des3 == des6 && des1 > des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 > des5) || (des2 == des5 && des3 > des4) || (des2 == des5 && des3 == des4 && des1 > des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 > des4) || (des2 == des4 && des3 > des5) || (des2 == des4 && des3 == des5 && des1 > des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 > des4) || (des2 == des4 && des3 > des6) || (des2 == des4 && des3 == des6 && des1 > des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 > des6) || (des2 == des6 && des1 > des5) || (des2 == des6 && des1 == des5 && des3 > des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 > des6) || (des2 == des6 && des1 > des4) || (des2 == des6 && des1 == des4 && des3 > des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 > des5) || (des2 == des5 && des1 > des6) || (des2 == des5 && des1 == des6 && des3 > des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 > des5) || (des2 == des5 && des1 > des4) || (des2 == des5 && des1 == des4 && des3 > des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 > des4) || (des2 == des4 && des1 > des5) || (des2 == des4 && des1 == des5 && des3 > des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 > des4) || (des2 == des4 && des1 > des6) || (des2 == des4 && des1 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 > des6) || (des1 == des6 && des3 > des5) || (des1 == des6 && des3 == des5 && des2 > des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 > des6) || (des1 == des6 && des3 > des4) || (des1 == des6 && des3 == des4 && des2 > des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 > des5) || (des1 == des5 && des3 > des6) || (des1 == des5 && des3 == des6 && des2 > des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 > des5) || (des1 == des5 && des3 > des4) || (des1 == des5 && des3 == des4 && des2 > des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 > des4) || (des1 == des4 && des3 > des5) || (des1 == des4 && des3 == des5 && des2 > des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 > des4) || (des1 == des4 && des3 > des6) || (des1 == des4 && des3 == des6 && des2 > des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 > des6) || (des1 == des6 && des2 > des5) || (des1 == des6 && des2 == des5 && des3 > des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 > des6) || (des1 == des6 && des2 > des4) || (des1 == des6 && des2 == des4 && des3 > des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 > des5) || (des1 == des5 && des2 > des6) || (des1 == des5 && des2 == des6 && des3 > des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 > des5) || (des1 == des5 && des2 > des4) || (des1 == des5 && des2 == des4 && des3 > des6)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 > des4) || (des1 == des4 && des2 > des6) || (des1 == des4 && des2 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 > des4) || (des1 == des4 && des2 > des5) || (des1 == des4 && des2 == des5 && des3 > des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 > des6) || (des3 == des6 && des2 > des5) || (des3 == des6 && des2 == des5 && des1 > des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 > des6) || (des3 == des6 && des2 > des4) || (des3 == des6 && des2 == des4 && des1 > des5)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 > des5) || (des3 == des5 && des2 > des6) || (des3 == des5 && des2 == des6 && des1 > des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 > des5) || (des3 == des5 && des2 > des4) || (des3 == des5 && des2 == des4 && des1 > des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 > des4) || (des3 == des4 && des2 > des5) || (des3 == des4 && des2 == des5 && des1 > des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 > des4) || (des3 == des4 && des2 > des6) || (des3 == des4 && des2 == des6 && des1 > des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 > des6) || (des3 == des6 && des1 > des5) || (des3 == des6 && des1 == des5 && des2 > des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 > des6) || (des3 == des6 && des1 > des4) || (des3 == des6 && des1 == des4 && des2 > des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 > des5) || (des3 == des5 && des1 > des6) || (des3 == des5 && des1 == des6 && des2 > des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 > des5) || (des3 == des5 && des1 > des4) || (des3 == des5 && des1 == des4 && des2 > des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 > des4) || (des3 == des4 && des1 > des5) || (des3 == des4 && des1 == des5 && des2 > des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 > des4) || (des3 == des4 && des1 > des6) || (des3 == des4 && des1 == des6 && des2 > des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 > des6) || (des2 == des6 && des3 > des5) || (des2 == des6 && des3 == des5 && des1 > des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 > des6) || (des2 == des6 && des3 > des4) || (des2 == des6 && des3 == des4 && des1 > des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 > des5) || (des2 == des5 && des3 > des6) || (des2 == des5 && des3 == des6 && des1 > des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 > des5) || (des2 == des5 && des3 > des4) || (des2 == des5 && des3 == des4 && des1 > des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 > des4) || (des2 == des4 && des3 > des5) || (des2 == des4 && des3 == des5 && des1 > des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 > des4) || (des2 == des4 && des3 > des6) || (des2 == des4 && des3 == des6 && des1 > des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 > des6) || (des2 == des6 && des1 > des5) || (des2 == des6 && des1 == des5 && des3 > des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 > des6) || (des2 == des6 && des1 > des4) || (des2 == des6 && des1 == des4 && des3 > des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 > des5) || (des2 == des5 && des1 > des6) || (des2 == des5 && des1 == des6 && des3 > des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 > des5) || (des2 == des5 && des1 > des4) || (des2 == des5 && des1 == des4 && des3 > des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 > des4) || (des2 == des4 && des1 > des5) || (des2 == des4 && des1 == des5 && des3 > des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 > des4) || (des2 == des4 && des1 > des6) || (des2 == des4 && des1 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 > des6) || (des1 == des6 && des3 > des5) || (des1 == des6 && des3 == des5 && des2 > des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 > des6) || (des1 == des6 && des3 > des4) || (des1 == des6 && des3 == des4 && des2 > des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 > des5) || (des1 == des5 && des3 > des6) || (des1 == des5 && des3 == des6 && des2 > des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 > des5) || (des1 == des5 && des3 > des4) || (des1 == des5 && des3 == des4 && des2 > des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 > des4) || (des1 == des4 && des3 > des5) || (des1 == des4 && des3 == des5 && des2 > des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 > des4) || (des1 == des4 && des3 > des6) || (des1 == des4 && des3 == des6 && des2 > des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 > des6) || (des1 == des6 && des2 > des5) || (des1 == des6 && des2 == des5 && des3 > des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 > des6) || (des1 == des6 && des2 > des4) || (des1 == des6 && des2 == des4 && des3 > des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 > des5) || (des1 == des5 && des2 > des6) || (des1 == des5 && des2 == des6 && des3 > des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 > des5) || (des1 == des5 && des2 > des4) || (des1 == des5 && des2 == des4 && des3 > des6)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 > des4) || (des1 == des4 && des2 > des6) || (des1 == des4 && des2 == des6 && des3 > des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 > des4) || (des1 == des4 && des2 > des5) || (des1 == des4 && des2 == des5 && des3 > des6)))<br>
+
+        printf("Player1 wins\n");<br>
+
+/* player2 wins*/<br>
+
+else if ((j2421 == 1 && j1s ==1) || (j2421 == 1 && j1f == 1) || (j2421 == 1 && j1t == 1) || (j2421 == 1 && j1q == 1) || (j2t == 1 && j1s == 1) || (j2t == 1 && j1f == 1) || (j2t == 1 && j1q == 1) || (j2f == 1 && j1s == 1) || (j2f == 1 && j1q ==1) || (j2s == 1 && j1q ==1))<br>
+    printf("Player2 wins\n");<br>
+
+else if (((j1s == 1 && des3 > des2 && des3 > des1) && (j2s == 1 && des6 > des5 && des6 > des4) && (des6 > des3)) || ((j1s == 1 && des3 > des2 && des3 > des1) && (j2s == 1 && des5 > des6 && des5 > des4) && (des5 > des3)) || ((j1s == 1 && des3 > des2 && des3 > des1) && (j2s == 1 && des4 > des5 && des4 > des6) && (des4 > des3)) || ((j1s == 1 && des2 > des3 && des2 > des1) && (j2s == 1 && des6 > des5 && des6 > des4) && (des6 > des2)) || ((j1s == 1 && des2 > des3 && des2 > des1) && (j2s == 1 && des5 > des6 && des5 > des4) && (des5 > des2)) || ((j1s == 1 && des2 > des3 && des2 > des1) && (j2s == 1 && des4 > des5 && des4 > des6) && (des4 > des2)) || ((j1s == 1 && des1 > des2 && des1 > des3) && (j2s == 1 && des6 > des5 && des6 > des4) && (des6 > des1)) || ((j1s == 1 && des1 > des2 && des1 > des3) && (j2s == 1 && des5 > des6 && des5 > des4) && (des5 > des1)) || ((j1s == 1 && des1 > des2 && des1 > des3) && (j2s == 1 && des4 > des5 && des4 > des6) && (des4 > des1)))<br>
+     printf("Player2 wins\n");<br>
+
+else if (((j1f == 1 && des3 >= 2) && (j2f == 1 && des6 >= 2) && (des3 < des6)) || ((j1f == 1 && des3 >= 2) && (j2f == 1 && des5 >= 2) && (des3 < des5)) || ((j1f == 1 && des3 >= 2) && (j2f == 1 && des4 >= 2) && (des3 < des4)) || ((j1f == 1 && des2 >= 2) && (j2f == 1 && des6 >= 2) && (des2 < des6)) ||  ((j1f == 1 && des2 >= 2) && (j2f == 1 && des5 >= 2) && (des2 < des5)) ||  ((j1f == 1 && des2 >= 2) && (j2f == 1 && des4 >= 2) && (des2 < des4)) || ((j1f == 1 && des1 >= 2) && (j2f == 1 && des6 >= 2) && (des1 < des6)) || ((j1f == 1 && des1 >= 2) && (j2f == 1 && des5 >= 2) && (des1 < des5)) || ((j1f == 1 && des1 >= 2) && (j2f == 1 && des4 >= 2) && (des1 < des4)))<br>
+    printf("Player2 wins\n");<br>
+
+else if ((j1t == 1 && j2t == 1) && (des1 < des4))<br>
+    printf("Player2 wins\n");<br>
+
+else if ((j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 < des6) || (des3 == des6 && des2 < des5) || (des3 == des6 && des2 == des5 && des1 < des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 < des6) || (des3 == des6 && des2 < des4) || (des3 == des6 && des2 == des4 && des1 < des5)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 < des5) || (des3 == des5 && des2 < des6) || (des3 == des5 && des2 == des6 && des1 < des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 < des5) || (des3 == des5 && des2 < des4) || (des3 == des5 && des2 == des4 && des1 < des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 < des4) || (des3 == des4 && des2 < des5) || (des3 == des4 && des2 == des5 && des1 < des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 < des4) || (des3 == des4 && des2 < des6) || (des3 == des4 && des2 == des6 && des1 < des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 < des6) || (des3 == des6 && des1 < des5) || (des3 == des6 && des1 == des5 && des2 < des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 < des6) || (des3 == des6 && des1 < des4) || (des3 == des6 && des1 == des4 && des2 < des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 < des5) || (des3 == des5 && des1 < des6) || (des3 == des5 && des1 == des6 && des2 < des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 < des5) || (des3 == des5 && des1 < des4) || (des3 == des5 && des1 == des4 && des2 < des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 < des4) || (des3 == des4 && des1 < des5) || (des3 == des4 && des1 == des5 && des2 < des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 < des4) || (des3 == des4 && des1 < des6) || (des3 == des4 && des1 == des6 && des2 < des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 < des6) || (des2 == des6 && des3 < des5) || (des2 == des6 && des3 == des5 && des1 < des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 < des6) || (des2 == des6 && des3 < des4) || (des2 == des6 && des3 == des4 && des1 < des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 < des5) || (des2 == des5 && des3 < des6) || (des2 == des5 && des3 == des6 && des1 < des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 < des5) || (des2 == des5 && des3 < des4) || (des2 == des5 && des3 == des4 && des1 < des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 < des4) || (des2 == des4 && des3 < des5) || (des2 == des4 && des3 == des5 && des1 < des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 < des4) || (des2 == des4 && des3 < des6) || (des2 == des4 && des3 == des6 && des1 < des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 < des6) || (des2 == des6 && des1 < des5) || (des2 == des6 && des1 == des5 && des3 < des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 < des6) || (des2 == des6 && des1 < des4) || (des2 == des6 && des1 == des4 && des3 < des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 < des5) || (des2 == des5 && des1 < des6) || (des2 == des5 && des1 == des6 && des3 < des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 < des5) || (des2 == des5 && des1 < des4) || (des2 == des5 && des1 == des4 && des3 < des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 < des4) || (des2 == des4 && des1 < des5) || (des2 == des4 && des1 == des5 && des3 < des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 < des4) || (des2 == des4 && des1 < des6) || (des2 == des4 && des1 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 < des6) || (des1 == des6 && des3 < des5) || (des1 == des6 && des3 == des5 && des2 < des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 < des6) || (des1 == des6 && des3 < des4) || (des1 == des6 && des3 == des4 && des2 < des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 < des5) || (des1 == des5 && des3 < des6) || (des1 == des5 && des3 == des6 && des2 < des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 < des5) || (des1 == des5 && des3 < des4) || (des1 == des5 && des3 == des4 && des2 < des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 < des4) || (des1 == des4 && des3 < des5) || (des1 == des4 && des3 == des5 && des2 < des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 < des4) || (des1 == des4 && des3 < des6) || (des1 == des4 && des3 == des6 && des2 < des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 < des6) || (des1 == des6 && des2 < des5) || (des1 == des6 && des2 == des5 && des3 < des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 < des6) || (des1 == des6 && des2 < des4) || (des1 == des6 && des2 == des4 && des3 < des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 < des5) || (des1 == des5 && des2 < des6) || (des1 == des5 && des2 == des6 && des3 < des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 < des5) || (des1 == des5 && des2 < des4) || (des1 == des5 && des2 == des4 && des3 < des6)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 < des4) || (des1 == des4 && des2 < des6) || (des1 == des4 && des2 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 < des4) || (des1 == des4 && des2 < des5) || (des1 == des4 && des2 == des5 && des3 < des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 < des6) || (des3 == des6 && des2 < des5) || (des3 == des6 && des2 == des5 && des1 < des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 < des6) || (des3 == des6 && des2 < des4) || (des3 == des6 && des2 == des4 && des1 < des5)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 < des5) || (des3 == des5 && des2 < des6) || (des3 == des5 && des2 == des6 && des1 < des4)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 < des5) || (des3 == des5 && des2 < des4) || (des3 == des5 && des2 == des4 && des1 < des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 < des4) || (des3 == des4 && des2 < des5) || (des3 == des4 && des2 == des5 && des1 < des6)) ||
+         (j1q == 1 && des3 > des2 && des2 >= des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 < des4) || (des3 == des4 && des2 < des6) || (des3 == des4 && des2 == des6 && des1 < des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 < des6) || (des3 == des6 && des1 < des5) || (des3 == des6 && des1 == des5 && des2 < des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 < des6) || (des3 == des6 && des1 < des4) || (des3 == des6 && des1 == des4 && des2 < des5)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 < des5) || (des3 == des5 && des1 < des6) || (des3 == des5 && des1 == des6 && des2 < des4)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 < des5) || (des3 == des5 && des1 < des4) || (des3 == des5 && des1 == des4 && des2 < des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 < des4) || (des3 == des4 && des1 < des5) || (des3 == des4 && des1 == des5 && des2 < des6)) ||
+         (j1q == 1 && des3 > des1 && des1 >= des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 < des4) || (des3 == des4 && des1 < des6) || (des3 == des4 && des1 == des6 && des2 < des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 < des6) || (des2 == des6 && des3 < des5) || (des2 == des6 && des3 == des5 && des1 < des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 < des6) || (des2 == des6 && des3 < des4) || (des2 == des6 && des3 == des4 && des1 < des5)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 < des5) || (des2 == des5 && des3 < des6) || (des2 == des5 && des3 == des6 && des1 < des4)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 < des5) || (des2 == des5 && des3 < des4) || (des2 == des5 && des3 == des4 && des1 < des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 < des4) || (des2 == des4 && des3 < des5) || (des2 == des4 && des3 == des5 && des1 < des6)) ||
+         (j1q == 1 && des2 > des3 && des3 >= des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 < des4) || (des2 == des4 && des3 < des6) || (des2 == des4 && des3 == des6 && des1 < des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 < des6) || (des2 == des6 && des1 < des5) || (des2 == des6 && des1 == des5 && des3 < des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 < des6) || (des2 == des6 && des1 < des4) || (des2 == des6 && des1 == des4 && des3 < des5)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 < des5) || (des2 == des5 && des1 < des6) || (des2 == des5 && des1 == des6 && des3 < des4)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 < des5) || (des2 == des5 && des1 < des4) || (des2 == des5 && des1 == des4 && des3 < des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 < des4) || (des2 == des4 && des1 < des5) || (des2 == des4 && des1 == des5 && des3 < des6)) ||
+         (j1q == 1 && des2 > des1 && des1 >= des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 < des4) || (des2 == des4 && des1 < des6) || (des2 == des4 && des1 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 < des6) || (des1 == des6 && des3 < des5) || (des1 == des6 && des3 == des5 && des2 < des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 < des6) || (des1 == des6 && des3 < des4) || (des1 == des6 && des3 == des4 && des2 < des5)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 < des5) || (des1 == des5 && des3 < des6) || (des1 == des5 && des3 == des6 && des2 < des4)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 < des5) || (des1 == des5 && des3 < des4) || (des1 == des5 && des3 == des4 && des2 < des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 < des4) || (des1 == des4 && des3 < des5) || (des1 == des4 && des3 == des5 && des2 < des6)) ||
+         (j1q == 1 && des1 > des3 && des3 >= des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 < des4) || (des1 == des4 && des3 < des6) || (des1 == des4 && des3 == des6 && des2 < des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 < des6) || (des1 == des6 && des2 < des5) || (des1 == des6 && des2 == des5 && des3 < des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 < des6) || (des1 == des6 && des2 < des4) || (des1 == des6 && des2 == des4 && des3 < des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 < des5) || (des1 == des5 && des2 < des6) || (des1 == des5 && des2 == des6 && des3 < des4)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 < des5) || (des1 == des5 && des2 < des4) || (des1 == des5 && des2 == des4 && des3 < des6)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 < des4) || (des1 == des4 && des2 < des6) || (des1 == des4 && des2 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 > des2 && des2 >= des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 < des4) || (des1 == des4 && des2 < des5) || (des1 == des4 && des2 == des5 && des3 < des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 < des6) || (des3 == des6 && des2 < des5) || (des3 == des6 && des2 == des5 && des1 < des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 < des6) || (des3 == des6 && des2 < des4) || (des3 == des6 && des2 == des4 && des1 < des5)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 < des5) || (des3 == des5 && des2 < des6) || (des3 == des5 && des2 == des6 && des1 < des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 < des5) || (des3 == des5 && des2 < des4) || (des3 == des5 && des2 == des4 && des1 < des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 < des4) || (des3 == des4 && des2 < des5) || (des3 == des4 && des2 == des5 && des1 < des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 < des4) || (des3 == des4 && des2 < des6) || (des3 == des4 && des2 == des6 && des1 < des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des3 < des6) || (des3 == des6 && des1 < des5) || (des3 == des6 && des1 == des5 && des2 < des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des3 < des6) || (des3 == des6 && des1 < des4) || (des3 == des6 && des1 == des4 && des2 < des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des3 < des5) || (des3 == des5 && des1 < des6) || (des3 == des5 && des1 == des6 && des2 < des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des3 < des5) || (des3 == des5 && des1 < des4) || (des3 == des5 && des1 == des4 && des2 < des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des3 < des4) || (des3 == des4 && des1 < des5) || (des3 == des4 && des1 == des5 && des2 < des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des3 < des4) || (des3 == des4 && des1 < des6) || (des3 == des4 && des1 == des6 && des2 < des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 < des6) || (des2 == des6 && des3 < des5) || (des2 == des6 && des3 == des5 && des1 < des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 < des6) || (des2 == des6 && des3 < des4) || (des2 == des6 && des3 == des4 && des1 < des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 < des5) || (des2 == des5 && des3 < des6) || (des2 == des5 && des3 == des6 && des1 < des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 < des5) || (des2 == des5 && des3 < des4) || (des2 == des5 && des3 == des4 && des1 < des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 < des4) || (des2 == des4 && des3 < des5) || (des2 == des4 && des3 == des5 && des1 < des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 < des4) || (des2 == des4 && des3 < des6) || (des2 == des4 && des3 == des6 && des1 < des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des2 < des6) || (des2 == des6 && des1 < des5) || (des2 == des6 && des1 == des5 && des3 < des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des2 < des6) || (des2 == des6 && des1 < des4) || (des2 == des6 && des1 == des4 && des3 < des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des2 < des5) || (des2 == des5 && des1 < des6) || (des2 == des5 && des1 == des6 && des3 < des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des2 < des5) || (des2 == des5 && des1 < des4) || (des2 == des5 && des1 == des4 && des3 < des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des2 < des4) || (des2 == des4 && des1 < des5) || (des2 == des4 && des1 == des5 && des3 < des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des2 < des4) || (des2 == des4 && des1 < des6) || (des2 == des4 && des1 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 < des6) || (des1 == des6 && des3 < des5) || (des1 == des6 && des3 == des5 && des2 < des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 < des6) || (des1 == des6 && des3 < des4) || (des1 == des6 && des3 == des4 && des2 < des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 < des5) || (des1 == des5 && des3 < des6) || (des1 == des5 && des3 == des6 && des2 < des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 < des5) || (des1 == des5 && des3 < des4) || (des1 == des5 && des3 == des4 && des2 < des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 < des4) || (des1 == des4 && des3 < des5) || (des1 == des4 && des3 == des5 && des2 < des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 < des4) || (des1 == des4 && des3 < des6) || (des1 == des4 && des3 == des6 && des2 < des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 > des5 && des5 >= des4) && ((des1 < des6) || (des1 == des6 && des2 < des5) || (des1 == des6 && des2 == des5 && des3 < des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 > des4 && des4 >= des5) && ((des1 < des6) || (des1 == des6 && des2 < des4) || (des1 == des6 && des2 == des4 && des3 < des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 > des6 && des6 >= des4) && ((des1 < des5) || (des1 == des5 && des2 < des6) || (des1 == des5 && des2 == des6 && des3 < des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 > des4 && des4 >= des6) && ((des1 < des5) || (des1 == des5 && des2 < des4) || (des1 == des5 && des2 == des4 && des3 < des6)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 > des6 && des6 >= des5) && ((des1 < des4) || (des1 == des4 && des2 < des6) || (des1 == des4 && des2 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 > des5 && des5 >= des6) && ((des1 < des4) || (des1 == des4 && des2 < des5) || (des1 == des4 && des2 == des5 && des3 < des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 < des6) || (des3 == des6 && des2 < des5) || (des3 == des6 && des2 == des5 && des1 < des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 < des6) || (des3 == des6 && des2 < des4) || (des3 == des6 && des2 == des4 && des1 < des5)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 < des5) || (des3 == des5 && des2 < des6) || (des3 == des5 && des2 == des6 && des1 < des4)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 < des5) || (des3 == des5 && des2 < des4) || (des3 == des5 && des2 == des4 && des1 < des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 < des4) || (des3 == des4 && des2 < des5) || (des3 == des4 && des2 == des5 && des1 < des6)) ||
+         (j1q == 1 && des3 >= des2 && des2 > des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 < des4) || (des3 == des4 && des2 < des6) || (des3 == des4 && des2 == des6 && des1 < des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des3 < des6) || (des3 == des6 && des1 < des5) || (des3 == des6 && des1 == des5 && des2 < des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des3 < des6) || (des3 == des6 && des1 < des4) || (des3 == des6 && des1 == des4 && des2 < des5)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des3 < des5) || (des3 == des5 && des1 < des6) || (des3 == des5 && des1 == des6 && des2 < des4)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des3 < des5) || (des3 == des5 && des1 < des4) || (des3 == des5 && des1 == des4 && des2 < des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des3 < des4) || (des3 == des4 && des1 < des5) || (des3 == des4 && des1 == des5 && des2 < des6)) ||
+         (j1q == 1 && des3 >= des1 && des1 > des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des3 < des4) || (des3 == des4 && des1 < des6) || (des3 == des4 && des1 == des6 && des2 < des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 < des6) || (des2 == des6 && des3 < des5) || (des2 == des6 && des3 == des5 && des1 < des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 < des6) || (des2 == des6 && des3 < des4) || (des2 == des6 && des3 == des4 && des1 < des5)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 < des5) || (des2 == des5 && des3 < des6) || (des2 == des5 && des3 == des6 && des1 < des4)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 < des5) || (des2 == des5 && des3 < des4) || (des2 == des5 && des3 == des4 && des1 < des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 < des4) || (des2 == des4 && des3 < des5) || (des2 == des4 && des3 == des5 && des1 < des6)) ||
+         (j1q == 1 && des2 >= des3 && des3 > des1) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 < des4) || (des2 == des4 && des3 < des6) || (des2 == des4 && des3 == des6 && des1 < des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des2 < des6) || (des2 == des6 && des1 < des5) || (des2 == des6 && des1 == des5 && des3 < des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des2 < des6) || (des2 == des6 && des1 < des4) || (des2 == des6 && des1 == des4 && des3 < des5)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des2 < des5) || (des2 == des5 && des1 < des6) || (des2 == des5 && des1 == des6 && des3 < des4)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des2 < des5) || (des2 == des5 && des1 < des4) || (des2 == des5 && des1 == des4 && des3 < des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des2 < des4) || (des2 == des4 && des1 < des5) || (des2 == des4 && des1 == des5 && des3 < des6)) ||
+         (j1q == 1 && des2 >= des1 && des1 > des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des2 < des4) || (des2 == des4 && des1 < des6) || (des2 == des4 && des1 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 < des6) || (des1 == des6 && des3 < des5) || (des1 == des6 && des3 == des5 && des2 < des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 < des6) || (des1 == des6 && des3 < des4) || (des1 == des6 && des3 == des4 && des2 < des5)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 < des5) || (des1 == des5 && des3 < des6) || (des1 == des5 && des3 == des6 && des2 < des4)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 < des5) || (des1 == des5 && des3 < des4) || (des1 == des5 && des3 == des4 && des2 < des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 < des4) || (des1 == des4 && des3 < des5) || (des1 == des4 && des3 == des5 && des2 < des6)) ||
+         (j1q == 1 && des1 >= des3 && des3 > des2) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 < des4) || (des1 == des4 && des3 < des6) || (des1 == des4 && des3 == des6 && des2 < des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 >= des5 && des5 > des4) && ((des1 < des6) || (des1 == des6 && des2 < des5) || (des1 == des6 && des2 == des5 && des3 < des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des6 >= des4 && des4 > des5) && ((des1 < des6) || (des1 == des6 && des2 < des4) || (des1 == des6 && des2 == des4 && des3 < des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 >= des6 && des6 > des4) && ((des1 < des5) || (des1 == des5 && des2 < des6) || (des1 == des5 && des2 == des6 && des3 < des4)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des5 >= des4 && des4 > des6) && ((des1 < des5) || (des1 == des5 && des2 < des4) || (des1 == des5 && des2 == des4 && des3 < des6)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 >= des6 && des6 > des5) && ((des1 < des4) || (des1 == des4 && des2 < des6) || (des1 == des4 && des2 == des6 && des3 < des5)) ||
+         (j1q == 1 && des1 >= des2 && des2 > des3) && (j2q == 1 && des4 >= des5 && des5 > des6) && ((des1 < des4) || (des1 == des4 && des2 < des5) || (des1 == des4 && des2 == des5 && des3 < des6)))<br>
+
+        printf("Player2 wins\n");<br>
+
+else<br>
+    printf("Draw\n");<br>
+
+
+return 0;<br>
+
+}
+
+    
+    
+    
+    </body>
+    </html>
