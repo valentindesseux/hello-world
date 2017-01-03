@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+     <meta charset="UTF-8"/>
+      <title>Valentin Desseux</title>
+     </head>
+  <body>
+    #include stdio.h<br>
+int main(int argc, char* argv[]) {<br>
+
+char couleur;<br>
+int diode1, diode2, serie, batterie, port;<br>
+char r, n, b, d;<br>
+
+scanf("%c %d %d %d %d %d", &couleur, &diode1, &diode2, &serie, &batterie, &port);<br>
+
+
+int boolc = (couleur == 'r' && diode1 == 1 && diode2 == 0 || couleur == 'b' && diode1 == 1 && diode2 == 0 || couleur == 'b' && diode1 == 0 && diode2 == 0);<br>
+
+int boold = (couleur == 'n' && diode1 == 1 && diode2 == 0 || couleur == 'd' && diode1 == 1 && diode2 == 1 || couleur == 'b' && diode1 == 0 && diode2 == 1);<br>
+
+int bools = (couleur == 'd' && diode1 == 0 && diode2 == 0 && serie % 2 == 0 || couleur == 'd' && diode1 == 0 && diode2 == 1 && serie % 2 == 0 || couleur ==  'r' && diode1 == 0 && diode2 == 0 && serie % 2 == 0 || couleur == 'n' && diode1 == 0 && diode2 == 0 && serie % 2 == 0);<br>
+
+int boolp = (couleur == 'd' && diode1 == 1 && diode2 == 0 && port == 1 || couleur == 'n' && diode1 == 1 && diode2 == 1 && port == 1 || couleur == 'n' && diode1 == 0 && diode2 == 1 && port == 1);<br>
+
+int boolb = (couleur == 'r' && diode1 == 0 && diode2 == 1 && batterie >= 2 || couleur == 'r' && diode1 == 1 && diode2 == 1 && batterie >= 2 || couleur == 'b' && diode1 == 1 && diode2 == 1 && batterie >= 2);<br>
+
+
+int boolv = (boolc || bools || boolp || boolb);<br>
+
+
+printf("%d\n", boolv);<br>
+
+return 0;<br>
+
+}
+
+  </body>
+    </html>

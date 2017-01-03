@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+     <meta charset="UTF-8"/>
+      <title>Valentin Desseux</title>
+     </head>
+  <body>
+    #include stdio.h<br>
+<br>#include stdlib.h
+<br>#include string.h
+<br>char** jpp(char* str, char d, int* nb){
+<br>d;
+
+
+<br>}
+<br>void kimberley(char argv1[], char argv2[], char s[]){
+<br> int i=0, b=0;
+<br>  while(argv2[i] != '\0'){
+ <br>   int j=0, d=0;
+  <br>  while(argv1[j]!='\0'){
+ <br>     while(argv1[j]==']' || argv1[j] == ' '){
+ <br>       j++;
+ <br>    }
+  <br>    if(argv2[i]==argv1[j]){
+  <br>      while(argv1[j+1] == ' '){
+   <br>       j++;
+   <br>     }
+<br>	if(argv1[j+1] == '-'){
+<br>	  j++;
+<br>	  int t = j+2;
+	<br>  while(argv1[t] == ' '){
+<br>	    t++;
+	<br>  }
+<br>	  *(s+b) = argv1[t];
+	<br>  b++;
+	<br>  t++;
+	<br>  while(argv1[t]>='a' && argv1[t]<='z' || argv1[t]>='0' && argv1[t]<='9'){
+	 <br>   *(s+b) = argv1[t];
+	 <br>   b++;
+	 <br>   t++;
+	<br>  }
+	<br>  d=1;
+<br>	}
+   <br>   }
+  <br>    j++;
+  <br>  }
+  <br>  if (d==0){
+   <br>   *(s+b) = argv2[i];
+    <br>  b++;
+  <br>  }
+  <br>  i++;
+ <br> }
+<br>}
+
+
+
+<br>int conv(char* str){
+ <br> int res=0;
+ <br> for(; *str !='\0'; ++str){
+  <br>  int tmp = *str - '0';
+   <br> res *= 10;
+  <br>  res += tmp;
+  <br>}
+<br>   return res;
+ <br> }
+
+<br>int main(int argc, char* argv[]) {
+<br>  int d, v, i;
+ <br> int nb=conv(argv[3]);
+
+<br>  int count=0;
+ <br> char* s=(char*) malloc(sizeof(char*)*5000000);
+<br>  for(v=0; v<5000000; v++){
+ <br>   *(s+v)='\0';
+<br>  }
+
+ <br> char* tmp = (char*) malloc (sizeof(char*)*5000000);
+ <br> for(v=0;v<5000000;v++){
+ <br>   tmp[v]='\0';
+ <br> }
+ <br> kimberley(argv[1], argv[2], s);
+<br>  if(nb==0){
+
+  <br>  printf("%s", argv[2]);
+ <br>     return 0;
+
+ <br> }
+     <br> if(nb!=0) {
+   <br>     kimberley(argv[1], argv[2], s);
+    <br>    nb--;
+   <br>   }
+ <br> for(i=0;i<5000000;i++){
+ <br>   tmp[i]=s[i];
+ <br> }
+
+
+ <br> while(nb>0) {
+  <br>  for(i=0;i<5000000;i++){
+  <br>    *(tmp+i)=*(s+i);
+  <br>  }
+ <br>   for(i=0;i<5000000;i++){
+ <br>     *(s+i)='\0';
+ <br>   }
+ <br>   kimberley(argv[1],tmp, s);
+<br>    nb--;
+<br>  }
+ <br> for(d=0; d<5000000 && s[d]>='a' && s[d]<='z' || s[d]>='0' && s[d]<='9'; d++) {
+<br>  printf("%c", s[d]);
+<br>	}
+
+<br>printf("\n");
+<br>free(s);
+<br>	free(tmp);
+<br>  return 0;
+<br>}
+
+    
+  </body>
+</html>

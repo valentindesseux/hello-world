@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+     <meta charset="UTF-8"/>
+      <title>Valentin Desseux</title>
+     </head>
+  <body>
+    #include stdio.h <br>
+
+<br>int sd (int N) {
+ <br> int i = 0;
+
+ <br> while(i<N) {
+   <br> int j=0;
+   <br> while(j<=i) {
+   <br>   printf("*");
+  <br>    j++;
+
+<br>}
+<br>printf("\n");
+<br>i++;
+<br>}
+<br>}
+<br>void instruc() {
+<br>printf("Instructions:\n   Afficher sapin droite (a)\n   Afficher sapin gauche (b)\n   Afficher sapin complet (c)\n   Afficher carre (d)\n");
+<br>printf("   Afficher losange (e)\n   Afficher cinq (f)\n   Afficher instructions (h)\n   Quitter (q)\n\nVotre choix ?\n");
+<br>}
+
+
+<br>int lettre(char c) {
+
+ <br>while (!((((c == 'a') || (c == 'b') || (c == 'c') || (c == 'd') || (c == 'e') || (c == 'f') || (c == 'h') || (c == 'q'))))) {
+  <br><br>  printf("Erreur de saisie. Votre choix ?\n");
+  <br>  scanf("%c", &c);
+  <br>  scanf("%c", &c);
+ <br> }
+<br>}
+
+<br>int hauteur(int N) {
+
+<br>  printf("Hauteur ?\n");
+<br>  scanf("%d", &N);
+
+ <br> while ((N <= 0)) {
+  <br>  printf("Erreur de saisie. Hauteur ?\n");
+ <br>   scanf("%d", &N);
+<br>  }
+<br>}
+
+<br>int cote(int N) {
+
+ <br> printf("Cote ?\n");
+ <br> scanf("%d", &N);
+
+ <br> while ((N <= 0)) {
+  <br>  printf("Erreur de saisie. Cote ?\n");
+  <br>  scanf("%d", &N);
+ <br> }
+<br>}
+
+<br>int sg (int N) {
+<br>int i, j, k;
+<br>  for(i = 0 ;i<N;i++)
+  <br>  {
+   <br> for(j=0;j<N-i-1;j++)
+  <br>  {
+  <br>    printf(" ");
+  <br>  }
+  <br>  for(k=N-i-1;k<N;k++)
+  <br>  {
+   <br>   printf("*");
+
+   <br> }
+      <br>  printf("\n");
+ <br> }
+<br>}
+<br>int pyr(int N) {
+<br>int i, j, k;
+
+<br>for(i=0;i<N;i++)
+<br>{
+ <br>   for(j=0;j<N-i-1;j++)
+ <br>   {
+  <br>      printf(" ");
+  <br>  }
+   <br> for(k=N-i-1;k<N;k++)
+ <br>   {
+  <br>      printf("*");
+  <br>  }
+   <br> for(j=N;j<N+i;j++)
+  <br>  {
+    <br>    printf("*");
+ <br>   }
+  <br>  printf("\n");
+
+<br>}
+<br>}
+
+<br>int caree (int N) {
+<br>  int i = 0;
+
+
+  <br>  int j=0;
+  <br>  while(j<=N-1) {
+   <br>   printf("*");
+   <br>   j++;
+
+<br>}
+<br>printf("\n");
+
+<br>}
+<br>int carre (int N) {
+<br>  int i = 0;
+<br>printf("*");
+<br>int j=0;
+
+  <br>  while(j<=N-3) {
+    <br>  printf(" ");
+   <br>   j++;
+
+<br>}
+<br>printf("*\n");
+
+<br>}
+
+<br>int carree (int N) {
+<br>int g=0;
+
+  <br>  while(g<=N-4) {
+ <br>     carre(N);
+  <br>    g++;
+
+<br>}
+
+<br>}
+<br>int Carre (int N) {
+ <br>   caree(N);
+   <br> carre(N);
+   <br> carree(N);
+   <br> caree(N);
+
+
+
+<br>}
+
+<br>int instruction(char c) {
+<br>printf("Instructions:\n   Afficher sapin droite (a)\n   Afficher sapin gauche (b)\n   Afficher sapin complet (c)\n   Afficher carre (d)\n");
+<br>printf("   Afficher losange (e)\n   Afficher cinq (f)\n   Afficher instructions (h)\n   Quitter (q)\n\n");
+<br>}
+
+
+
+
+<br>int losange (int N) {
+<br>int i, j;
+
+<br>for(i=0;i<N;i++)
+<br>{
+ <br>   for(j=i+1;j<N;j++)
+  <br>  {
+  <br>      printf(" ");
+   <br> }
+  <br>  printf("/");
+  <br>  for(j=0;j<2*i;j++)
+  <br>  {
+   <br>     printf(" ");
+   <br> }
+   <br> printf("\\\n");
+<br>}
+
+<br>for(i=0;i<N;i++)
+<br>{
+ <br>   for(j=0;j<i;j++)
+  <br>  {
+   <br>     printf(" ");
+  <br>  }
+  <br>  printf("\\");
+  <br>  for(j=0;j<2*N-2*i-2;j++)
+  <br>  {
+   <br>     printf(" ");
+  <br>  }
+   <br> printf("/\n");
+<br>}
+<br>}
+
+<br>int cinq1 (int N) {
+
+
+  <br>  int j=0;
+   <br> while(j<=N-1) {
+    <br>  printf("*");
+    <br>  j++;
+
+<br>}
+<br>printf("\n");
+
+
+
+
+
+<br>}
+
+<br>int cinq2 (int N) {
+
+  <br>int i = 0;
+
+<br>int j=0;
+
+  <br>  while(j<=N-3) {
+   <br>   printf("*\n");
+   <br>   j++;
+
+<br>}
+
+
+<br>}
+<br>int cinq (int N) {
+    <br>    cinq1(N);
+     <br>   cinq2(N);
+     <br>   cinq1(N);
+      <br>  cinq3(N);
+      <br>  cinq1(N);
+
+
+ <br>}
+ <br>int cinq3 (int N) {
+ <br>int i, j;
+ <br>for(i=0;i<N-2;i++)
+  <br>   {
+    <br> for(j=0;j<=N-2;j++) {
+     <br>  printf(" ");
+ <br>}
+<br>printf("*\n");
+ <br>   }
+
+
+<br>}
+
+<br>int taille (int N) {
+
+ <br> printf("Taille ?\n");
+<br>  scanf("%d", &N);
+
+ <br> while ((N < 3)) {
+ <br>   printf("Erreur de saisie. Taille ?\n");
+  <br>  scanf("%d", &N);
+<br>  }
+
+<br>}
+
+
+<br>int main(int argc, char* argv[]) {
+ <br> char l;
+ <br> int h;
+<br>  instruc();
+<br>  scanf("%c", &l);
+ <br> /*lettre(l);*/
+
+
+<br>while (l!='q') {
+<br>while (!((((l == 'a') || (l == 'b') || (l == 'c') || (l == 'd') || (l == 'e') || (l == 'f') || (l == 'h'))))) {
+<br>    printf("Erreur de saisie. Votre choix ?\n");
+ <br>   scanf("%c", &l);
+  <br>  scanf("%c", &l);
+<br>  }
+
+<br>if(l=='a')
+   <br> sd(hauteur(h));
+<br>else if (l=='b')
+<br>    sg(hauteur(h));
+<br>else if (l=='c')
+<br>    pyr(hauteur(h));
+<br>else if (l=='d')
+  <br>  Carre(cote(h));
+<br>else if (l=='h')
+ <br>   instruction(l);
+<br>else if(l=='e')
+ <br>   losange(cote(h));
+<br>else if(l=='f')
+ <br>   cinq(taille(h));
+<br>if(l=='h')
+ <br>   printf("Votre choix ?\n");
+
+<br>if(((((l == 'a') || (l == 'b') || (l == 'c') || (l == 'd') || (l == 'e') || (l == 'f')))))
+  <br>  printf("\nAutre choix ?\n");
+
+<br>scanf("%c", &l);
+<br>scanf("%c", &l);
+<br>}
+<br>printf("\n");
+  <br>  return 0;
+<br>}
+
+
+    
+  </body>
+</html>
