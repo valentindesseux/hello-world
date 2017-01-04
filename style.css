@@ -78,6 +78,7 @@ footer p{
 					color: #d3d3d3;
 				}
 
+
  .cv img {
          float: right;
          border-radius: 5px;
@@ -100,7 +101,10 @@ footer p{
          .cv p{
          padding-left: 20px;
          }
-
+a {
+	text-decoration: none;
+	color: #e1e1e1;
+}
  .pp dl img{
          display: block;
          margin: auto;
@@ -199,4 +203,66 @@ footer p{
           
           width: 300px;
         }
- 
+ @media (max-width: 1000px){
+	 
+nav	li a{ 
+           font-size: 20px; 
+           padding: 5px; 
+         
+         } 
+          nav li:first-child { 
+         float: none; 
+        
+         margin: 8px; 
+         
+             padding-bottom: 5px; 
+             padding-top: 5px; 
+  
+       } 
+       
+        nav li:not(:first-child){ 
+           float: none;
+					display: center;
+         } 
+	 body {
+		 width:auto;
+	 }
+	 nav img{
+		 float: none;
+		 display: block;
+		 margin: auto;
+		margin-bottom: 5px;
+	 }
+	 
+	 nav ul a img{
+		 display: none;
+	 }
+
+	 aside {
+		 float: none;
+		 display: block;
+		 margin: auto;
+	 }
+	 table{
+		 width: auto;
+	 }
+	 .ci article{
+		  float: none;
+		 display: block;
+		 margin: auto;
+		 width: auto;
+		 margin-left: 40px;
+		 margin-top: 20px;
+	 }
+	 div.soso {
+
+	margin: auto;
+	width: auto;
+}
+	 
+	 #dur {
+		 display: none;
+	 }
+}
+	 
+	 
