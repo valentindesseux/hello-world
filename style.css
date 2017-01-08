@@ -230,8 +230,8 @@ margin: auto;
 text-align: center;
 }
 .img img {
-width="300";
-height="200";
+width=300;
+height=200;
 }
 .img:hover{
 transform: scale(1.1);
@@ -281,7 +281,7 @@ aside {
 float: none;
 display: block;
 margin: auto;
-width: 60%;
+width: 40%;
 }
 aside img {
 width:95%;
@@ -310,7 +310,7 @@ margin:auto;
 float: none;
 }
 .accueil #pp {
-width:90%;
+width:60%;
 }
 #dur {
 display: none;
